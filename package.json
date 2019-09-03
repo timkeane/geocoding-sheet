@@ -1,8 +1,7 @@
 {
   "name": "geocoding-sheet",
   "version": "0.0.1",
-  "description": "",
-  "main": "",
+  "description": "A geocoding addon for Google Sheets",
   "scripts": {
     "preclasp-push": "yarn build",
     "preclasp-deploy": "yarn build && ./tag.sh",
@@ -20,7 +19,7 @@
     "url": "git+https://github.com/timkeane/geocoding-sheet.git"
   },
   "author": "Tim Keane <t.d.keane@gmail.com> (https://timkeane.github.io/)",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/timkeane/geocoding-sheet/issues"
   },
