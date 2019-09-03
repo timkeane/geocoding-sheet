@@ -67,5 +67,13 @@
     "ghooks": {
       "pre-commit": "yarn test"
     }
-  }
+  },
+  "keywords": [
+    "mapping",
+    "openlayers",
+    "geocoding",
+    "spreadsheet",
+    "nyc",
+    "New York"
+  ]
 }
