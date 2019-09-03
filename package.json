@@ -1,0 +1,72 @@
+{
+  "name": "geocoding-sheet",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "preclasp-push": "yarn build",
+    "preclasp-deploy": "yarn build && ./tag.sh",
+    "clasp-push": "./clasp-push.sh",
+    "clasp-deploy": "./clasp-deploy.sh",
+    "test": "jest",
+    "build": "webpack",
+    "prebuild": "./gcp-clean.sh && yarn test && yarn roll-css",
+    "roll-css": "./node_modules/nyc-lib/css/roll-css.sh ./src/css/geocoding-sheet.theme.css ./src/css/geocoding-sheet.css",
+    "postbuild": "node pkg-addon",
+    "postinstall": "chmod +x *.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timkeane/geocoding-sheet.git"
+  },
+  "author": "Tim Keane <t.d.keane@gmail.com> (https://timkeane.github.io/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timkeane/geocoding-sheet/issues"
+  },
+  "homepage": "https://github.com/timkeane/geocoding-sheet#readme",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "nyc-lib": "^1.3.63",
+    "ol": "^5.3.3",
+    "papaparse": "^5.0.2",
+    "proj4": "^2.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "canvas-prebuilt": "1.6.11",
+    "copy-webpack-plugin": "^5.0.4",
+    "coveralls": "^3.0.4",
+    "ghooks": "^2.0.4",
+    "jest": "^24.8.0",
+    "jest-fetch-mock": "^1.6.5",
+    "nyc-build-helper": "^0.0.34",
+    "webpack": "4.19.1",
+    "webpack-cli": "2.0.14"
+  },
+  "jest": {
+    "verbose": true,
+    "automock": false,
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage/",
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "src/js/*.js"
+    ],
+    "setupFiles": [
+      "./__tests__/jest-setup.js"
+    ],
+    "transformIgnorePatterns": []
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "yarn test"
+    }
+  }
+}
