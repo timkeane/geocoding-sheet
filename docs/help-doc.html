@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+  <title>geocoding-sheet help doc</title>
+  <style>
+    h1 {
+      font: 400 24px/32px Google Sans, sans-serif;
+      text-align: center;
+    }
+    .subheading {
+      font: 400 24px/32px Google Sans, sans-serif;
+      text-align: left;
+      margin-left: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quickstart: geocoding-sheet Add-On for Google Sheets</h1>
+
+  <h1 class="subheading">Installation</h1>
+
+  <ol>
+      <li>Create a <a href="https://sheets.google.com/sheet/create" target="_blank">new Google Sheet</a>.</li>
+      <li>From within your new sheet, select the menu item <strong>Add-ons &gt; Get add-ons</strong>. You should be presented with a window to search for new Add-ons.</li>
+      <li>Search for <strong>geocoding-sheet</strong> published by <code>t.d.keane</code> and press the <strong>Free</strong> button to install the add-on.</li>
+      <li>You will then be asked to validate your identity by signing in with Google. You will need to give permission to Google to access certain parts of your account.</li>
+      <li>Create an instance of <strong>geocoding-sheet</strong> by selecting the menu item <strong>Add-ons &gt; geocoding-sheet &gt; Geocoder</strong>. The add-on should now load.</li>
+  </ol>
+  <h1 class="subheading">Configuration</h1>
+
+  <ol>
+      <li>Once the add-on has loaded, if this is your first use, you will be presented with a <code>Configuration</code> page, prompting you to fill out configuration data.</li>
+
+      <li> <strong>Geocoder</strong>: this section lets you choose <i>how</i> you want your data geocoded. 
+        <ul>
+            <li>If you wish to geocode data within NYC provided by DoITT, select  <strong>NYC Geoclient</strong>.</li>
+            <li>If you wish to geocode data throughout the US using the US Census, select <strong>Census</strong>.</li>
+        </ul> 
+      </li>
+
+      <li> <strong>Geocode-able location definition</strong>: this section lets you define the <i>parameters</i> for your data.
+        <ul>
+            <li>Each parameter represents a column heading in your table.</li>
+            <li>You should use the following format with each parameter separated by commas: <code>${Col1}, ${Col2}, ${Col3}</code>.</li>
+        </ul> 
+      </li>
+      <li><strong>Geocode on interval</strong>: check off this box if you want the add-on to automatically geocode data within a pre-defined interval.</li>
+     <br><span class="error">The remaining configuration is only applicable for those using the NYC Geoclient:</span> 
+      <li> <strong>Geoclient endpoint</strong>: this section lets you specify <i>which</i> API endpoint you want to use with the NYC Geoclient. 
+        <ul>
+            <li>By default, you should be using <a href="https://maps.nyc.gov/geoclient/v1" target="_blank">https://maps.nyc.gov/geoclient/v1</a>. There are six types of location requests that the NYC Geoclient service provides.</li>
+            <li>For more information about how to use the NYC Geoclient, check out the documentation <a href="https://api.cityofnewyork.us/geoclient/v1/doc" target="_blank">here</a>.</li>
+        </ul> 
+      </li>
+      <br><span class="error">To use the NYC Geoclient service, you need to have an App ID and App Key, which can be requested via the <a href="https://developer.cityofnewyork.us/api/geoclient-api" target="_blank">API Developer Portal.</a> </span> 
+      <li> <strong>Geoclient App ID</strong>: this section lets you specify the App ID required for the service to work.</li>
+      <li> <strong>Geoclient App Key</strong>: this section lets you specify the App Key required for the service to work.</li>
+      <li> <strong>Possible Geocoded values to append (if available)</strong>: this section lets you specify return values from the NYC Geoclient.</li>
+  </ol>
+  <h1 class="subheading">Supplying Data</h1>
+ 
+  <h1 class="subheading">Using the Map</h1>
+
+  <h1 class="subheading">Additional Features</h1>
+
+  <!-- <img src="img/how-to1.PNG" alt="Google Sheets homepage with square around 'Blank' image under 'Start a new spreadsheet'"> -->
+  
+</body>
+</html>
