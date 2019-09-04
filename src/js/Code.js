@@ -5,8 +5,8 @@ var CORRECTED_COLOR = '#ADFF2F';
 var LOCATION_NAME_COL = 'LOCATION_NAME';
 var LONGITUDE_COL = 'LNG';
 var LATITUDE_COL = 'LAT';
-var PROJECTED_X_COL = 'X';;
-var PROJECTED_Y_COL = 'Y'
+var PROJECTED_X_COL = 'X';
+var PROJECTED_Y_COL = 'Y';
 
 function onInstall() {
   onOpen();
