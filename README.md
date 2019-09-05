@@ -7,8 +7,8 @@ An addon for Google Sheets that provides the ability to geocode location data
 ### Prerequisites
 
 * Bash shell
-* Node
-* Yarn
+* [Node](https://nodejs.org/en/)
+* [Yarn](https://yarnpkg.com/en/)
 
 ### Install
 
@@ -20,11 +20,15 @@ An addon for Google Sheets that provides the ability to geocode location data
 
 ## Manage GCP artifacts
 
+### Prerequisites
+
+* [clasp](https://developers.google.com/apps-script/guides/clasp)
+* ??? google stuff
+* Note: `.clasp.json` is listed in `.gitignore` and should never be pushed to any repo
+
 ### Build GCP artifacts
 
 `yarn build`
-
-### 
 
 ### Push GCP artifacts
 
