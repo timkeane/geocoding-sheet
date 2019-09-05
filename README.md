@@ -4,6 +4,7 @@ An addon for Google Sheets that provides the ability to geocode location data
 
 ## Requirements to build this project
 
+* Bash shell
 * Node
 * Yarn
 
