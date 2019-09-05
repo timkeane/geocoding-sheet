@@ -2,13 +2,15 @@
 
 An addon for Google Sheets that provides the ability to geocode location data
 
-### Requirements to build this project
+## Setup and tests
+
+### Prerequisites
 
 * Bash shell
 * Node
 * Yarn
 
-### Installation
+### Install
 
 `yarn install`
 
@@ -16,9 +18,13 @@ An addon for Google Sheets that provides the ability to geocode location data
 
 `yarn test`
 
+## Manage GCP artifacts
+
 ### Build GCP artifacts
 
 `yarn build`
+
+### 
 
 ### Push GCP artifacts
 
