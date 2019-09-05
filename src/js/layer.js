@@ -9,7 +9,7 @@ import nycOl from 'nyc-lib/nyc/ol'
 
 const style = (feature, resolution) => {
   const zoom = nycOl.TILE_GRID.getZForResolution(resolution)
-  const text = feature.getId() + 1 + ''
+  const text = `${feature.getId()}`
   const fontSize = text.length > 2 ? zoom * .8 : zoom * 1.2
   const fontWeight = text.length <= 2 ? 'bold' : ''
   return new Style({

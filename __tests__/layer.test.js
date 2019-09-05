@@ -21,7 +21,7 @@ test('style', () => {
   const tileGid = nycOl.TILE_GRID
   const feature = new Feature()
 
-  feature.setId(1)
+  feature.setId(2)
 
   let style = styleFn(feature, tileGid.getResolutions()[10])
 
