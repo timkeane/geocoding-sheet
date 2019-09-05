@@ -23,6 +23,6 @@ An addon for Google Sheets that provides the ability to geocode location data
 
 `yarn clasp-push`
 
-## Version and deploy GCP artifacts
+## Build, version and deploy GCP artifacts
 
 `yarn clasp-deploy`
