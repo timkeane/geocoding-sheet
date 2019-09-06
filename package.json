@@ -44,7 +44,6 @@
     "jest": "^24.8.0",
     "jest-fetch-mock": "^1.6.5",
     "nyc-build-helper": "^0.0.34",
-    "shelljs": "^0.8.3",
     "showdown": "^1.9.0",
     "webpack": "4.19.1",
     "webpack-cli": "2.0.14"
