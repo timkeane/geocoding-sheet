@@ -25,23 +25,47 @@ test('functions loaded', () => {
 })
 
 test('onInstall', () => {
-  expect.assertions(6)
+  expect.assertions(8)
 
   onInstall()
 
-  expect(SpreadsheetApp.getUi).toHaveBeenCalledTimes(1)
+  expect(SpreadsheetApp.getUi).toHaveBeenCalledTimes(2)
   
   const ui = SpreadsheetApp.getUi.mock.results[0].value
-  expect(ui.createAddonMenu).toHaveBeenCalledTimes(1)
+  expect(ui.createAddonMenu).toHaveBeenCalledTimes(2)
 
   const menu = ui.createAddonMenu.mock.results[0].value
-  expect(menu.addItem).toHaveBeenCalledTimes(1)
+  expect(menu.addItem).toHaveBeenCalledTimes(2)
   expect(menu.addItem.mock.calls[0][0]).toBe(ADDON_NAME)
   expect(menu.addItem.mock.calls[0][1]).toBe('show')
+  expect(menu.addItem.mock.calls[1][0]).toBe('Help')
+  expect(menu.addItem.mock.calls[1][1]).toBe('help')
 
   const item = menu.addItem.mock.results[0].value
-  expect(item.addToUi).toHaveBeenCalledTimes(1)
+  expect(item.addToUi).toHaveBeenCalledTimes(2)
 
+})
+
+test('help', () => {
+  expect.assertions(8)
+
+  help()
+
+  expect(HtmlService.createTemplateFromFile).toHaveBeenCalledTimes(1)
+  expect(HtmlService.createTemplateFromFile.mock.calls[0][0]).toBe('help')
+
+  const templ = HtmlService.createTemplateFromFile.mock.results[0].value
+  expect(templ.evaluate).toHaveBeenCalledTimes(1)
+
+  const page = templ.evaluate.mock.results[0].value
+  expect(page.setTitle).toHaveBeenCalledTimes(1)
+  expect(page.setTitle.mock.calls[0][0]).toBe('Help')
+
+  expect(SpreadsheetApp.getUi).toHaveBeenCalledTimes(1)
+
+  const ui = SpreadsheetApp.getUi.mock.results[0].value
+  expect(ui.showSidebar).toHaveBeenCalledTimes(1)
+  expect(ui.showSidebar.mock.calls[0][0]).toBe(page)
 })
 
 test('show', () => {

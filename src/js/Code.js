@@ -14,12 +14,20 @@ function onInstall() {
 
 function onOpen() {
   SpreadsheetApp.getUi().createAddonMenu().addItem(ADDON_NAME, 'show').addToUi();
+  SpreadsheetApp.getUi().createAddonMenu().addItem('Help', 'help').addToUi();
 }
 
-function show() {
-  var html = HtmlService.createTemplateFromFile('index').evaluate().setTitle(ADDON_NAME);
+function help() {
+  show(true)
+}
+
+function show(help) {
+  var page = help ? 'help' : 'index';
+  var title = help ? 'Help' : ADDON_NAME;
+  var html = HtmlService.createTemplateFromFile(page).evaluate().setTitle(title);
   SpreadsheetApp.getUi().showSidebar(html);
 }
+
 
 function getData() {
   return SpreadsheetApp.getActiveSheet().getDataRange().getValues();
@@ -125,6 +133,7 @@ global.PROJECTED_Y_COL = PROJECTED_Y_COL
 global.onInstall = onInstall
 global.onOpen = onOpen
 global.show = show
+global.help = help
 global.getData = getData
 global.standardCols = standardCols
 global.geoCols = geoCols
