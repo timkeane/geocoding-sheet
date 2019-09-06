@@ -16,6 +16,8 @@ fs.readdirSync('.')
     help += converter.makeHtml(md)
   })
 
+help = help.replace(/href\=\"\.\//g ,'href="#')
+
 help = `<!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +28,8 @@ body {margin: 5px}
 </style>
 </head>
 <body>
-${help.replace(/href\=\"\.\//g ,'href="#')}
+<a id="index.md"></a>
+${help}
 </body>
 </html>`
 
