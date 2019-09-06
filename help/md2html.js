@@ -20,6 +20,10 @@ help = `<!DOCTYPE html>
 <html>
 <head>
 <title>Sheet Geocoder Help</title>
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+<style>
+body {margin: 5px}
+</style>
 </head>
 <body>
 ${help.replace(/href\=\"\.\//g ,'href="#')}
