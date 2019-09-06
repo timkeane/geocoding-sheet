@@ -1,0 +1,21 @@
+# Supplying Data
+The data you supply can be in a variety of formats. There are six types of location requests that the NYC Geoclient service provides. For this example, we will make a single-field Address request.
+
+| **Parameter Name** | **Required/Optional** | **Comments** |
+|----------------|:-------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------:|
+| houseNumber | required | House number of the address. |
+| street | required | Street name or 7-digit street code. |
+| borough | required if 'zip' not given | Valid values defined in section 1.1. of Geoclient API docs |
+| zip | required if 'borough' not given | Standard USPS 5-digit zip code or zip+4 (see this article). Must be a valid zip code for an area within New York City limits. |
+
+To explore how how to make different location requests with the NYC Geoclient, check out the documentation [here](https://api.cityofnewyork.us/geoclient/v1/doc).
+
+
+An example of a data formatted for a single-field Address request:
+
+| houseNumber | street | borough | zip |
+|:-------------:|:------:|:-------:|:---:|
+| 2 | Metrotech Center | Brooklyn | 11201 |
+| 4 | Metrotech Center | Brooklyn | 11201 |
+| 15 | Metrotech Center | Brooklyn | 11201 |
+[Back to Index](./index.md)
