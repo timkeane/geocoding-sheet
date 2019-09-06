@@ -14,3 +14,5 @@ fs.writeFileSync(path.resolve(__dirname, 'gcp/index.html'), html, {encoding: 'ut
 code = code.replace(/\/\* for testing[\s\S]+/g, '')
 code = code.replace(/\/\*version\*\//, `/*${version}*/`)
 fs.writeFileSync(path.resolve(__dirname, 'gcp/Code.gs'), code, {encoding: 'utf-8'})
+
+require('./help/md2html')
