@@ -1,4 +1,4 @@
-import EventHandling from 'nyc-lib/nyc/EventHandling';
+import EventHandling from 'nyc-lib/nyc/EventHandling'
 import proj4 from 'proj4'
 import {extend} from 'ol/extent'
 import Format from './Format'

@@ -1,3 +1,3 @@
 # Frequently Asked Questions
 
-[Back to Index](./index.md)
+[Back to Table of Contents](./index.md)
