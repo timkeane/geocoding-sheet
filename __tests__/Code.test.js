@@ -29,10 +29,10 @@ test('onInstall', () => {
 
   onInstall()
 
-  expect(SpreadsheetApp.getUi).toHaveBeenCalledTimes(2)
+  expect(SpreadsheetApp.getUi).toHaveBeenCalledTimes(1)
   
   const ui = SpreadsheetApp.getUi.mock.results[0].value
-  expect(ui.createAddonMenu).toHaveBeenCalledTimes(2)
+  expect(ui.createAddonMenu).toHaveBeenCalledTimes(1)
 
   const menu = ui.createAddonMenu.mock.results[0].value
   expect(menu.addItem).toHaveBeenCalledTimes(2)

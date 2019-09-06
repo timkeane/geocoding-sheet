@@ -13,8 +13,9 @@ function onInstall() {
 }
 
 function onOpen() {
-  SpreadsheetApp.getUi().createAddonMenu().addItem(ADDON_NAME, 'show').addToUi();
-  SpreadsheetApp.getUi().createAddonMenu().addItem('Help', 'help').addToUi();
+  const menu = SpreadsheetApp.getUi().createAddonMenu()
+  menu.addItem(ADDON_NAME, 'show').addToUi();
+  menu.addItem('Help', 'help').addToUi();
 }
 
 function help() {
