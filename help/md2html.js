@@ -5,20 +5,18 @@ Showdown.setFlavor('github')
 const converter = new Showdown.Converter()
 
 const markdown = fs.readFileSync(path.resolve(__dirname, 'index.md'), {encoding: 'utf-8'})
-let help = converter.makeHtml(markdown)
+let html = converter.makeHtml(markdown)
 
-fs.readdirSync('.')
+fs.readdirSync(path.resolve(__dirname))
   .filter(file => !isNaN(file.substr(0, 1)))
   .sort()
   .forEach(file => {
-    const md = fs.readFileSync(file, {encoding: 'utf-8'})
-    help +=  `\n<a id="${file}"></a>\n`
-    help += converter.makeHtml(md)
+    const md = fs.readFileSync(path.resolve(__dirname, file), {encoding: 'utf-8'})
+    html +=  `\n<a id="${file}"></a>\n`
+    html += converter.makeHtml(md)
   })
 
-help = help.replace(/href\=\"\.\//g ,'href="#')
-
-help = `<!DOCTYPE html>
+html = `<!DOCTYPE html>
 <html>
 <head>
 <title>Sheet Geocoder Help</title>
@@ -29,8 +27,8 @@ body {margin: 5px}
 </head>
 <body>
 <a id="index.md"></a>
-${help}
+${html.replace(/href\=\"\.\//g ,'href="#')}
 </body>
 </html>`
 
-fs.writeFileSync(path.resolve(__dirname, '../gcp/help.html'), help, {encoding: 'utf-8'})
+fs.writeFileSync(path.resolve(__dirname, '../gcp/help.html'), html, {encoding: 'utf-8'})
