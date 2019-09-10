@@ -65,4 +65,5 @@ typings/
 gcp/index.html
 gcp/Code.gs
 gcp/help.html
-dist
+
+dist/
