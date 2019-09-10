@@ -13,13 +13,13 @@ function onInstall() {
 }
 
 function onOpen() {
-  const menu = SpreadsheetApp.getUi().createAddonMenu()
+  const menu = SpreadsheetApp.getUi().createAddonMenu();
   menu.addItem(ADDON_NAME, 'show').addToUi();
   menu.addItem('Help', 'help').addToUi();
 }
 
 function help() {
-  show(true)
+  show(true);
 }
 
 function show(help) {
@@ -122,6 +122,10 @@ function geocoded(data) {
   };
 }
 
+function include(filename) {
+  return HtmlService.createHtmlOutputFromFile(filename).getContent();
+}
+
 /* for testing only - removed by build */
 global.ADDON_NAME = ADDON_NAME
 global.ERROR_COLOR = ERROR_COLOR
@@ -140,3 +144,4 @@ global.standardCols = standardCols
 global.geoCols = geoCols
 global.setFields = setFields
 global.geocoded = geocoded
+global.include = include
