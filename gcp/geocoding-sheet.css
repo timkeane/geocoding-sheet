@@ -1,0 +1,106 @@
+@import "nyc-ol-lib.css";
+@import "ol.finderapp.css";
+@import "rtl.ol.finderapp.css";
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #616161;
+}
+body * {
+  font-size: 12px !important;
+}
+#tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #616161;
+}
+.tabs>.btns h2 {
+  width: 50%;
+}
+#tab-conf label.conf, #tab-conf input[type="text"] {
+  display: block;
+  width: calc(100% - 10px);
+}
+#tab-conf label.conf {
+  color: #fff;
+  font-weight: bold;
+}
+#tab-conf input[type="text"] {
+  margin-bottom: 5px;
+}
+#geo-fields.chc {
+  width: calc(100% - 3px);
+}
+#geo-fields label {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#map {
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.geoloc {
+  display: none;
+}
+.rad-all {
+  border-radius: 0;
+}
+#geocode {
+  padding: 0 5px;
+}
+#review {
+  width: calc(100% - 81px);
+}
+#download {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%22433.5px%22%20height%3D%22433.5px%22%20viewBox%3D%220%200%20433.5%20433.5%22%3E%3Cpath%20style%3D%22fill%3A%23fff%22%20d%3D%22M395.25%2C153h-102V0h-153v153h-102l178.5%2C178.5L395.25%2C153z%20M38.25%2C382.5v51h357v-51H38.25z%22%2F%3E%3C%2Fsvg%3E");      font-size: 20px !important;
+  background-size: 20px;
+  position: fixed;
+  z-index: 2;
+  bottom: 3px;
+  right: 3px;
+  top: auto;
+  left: auto;
+}
+.pop .content {
+  max-width: 200px;
+  padding: 0 0 5px 5px;
+}
+.pop .content h3 {
+  margin-right: 22px;
+}
+.pop button.update {
+  padding: 0 5px;
+}
+#on-interv {
+  margin-bottom: 5px;
+}
+#geocode, #reset {
+  position: relative;
+  background-color: #efefef;
+}
+#geocode:hover, #reset:hover {
+  background-color: #ddd;
+}
+#geocode {
+  float: left;
+  margin-right: 5px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20id%3D%22Layer_1%22%20style%3D%22enable-background%3Anew%200%200%2091%2091%3B%22%20version%3D%221.1%22%20viewBox%3D%220%200%2091%2091%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cg%3E%3Cpath%20d%3D%22M66.9%2C41.8c0-11.3-9.1-20.4-20.4-20.4c-11.3%2C0-20.4%2C9.1-20.4%2C20.4c0%2C11.3%2C20.4%2C32.4%2C20.4%2C32.4S66.9%2C53.1%2C66.9%2C41.8z%20%20%20%20M37%2C41.4c0-5.2%2C4.3-9.5%2C9.5-9.5c5.2%2C0%2C9.5%2C4.2%2C9.5%2C9.5c0%2C5.2-4.2%2C9.5-9.5%2C9.5C41.3%2C50.9%2C37%2C46.6%2C37%2C41.4z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 37px;
+}
+#reset {
+  float: right;
+  margin-right: 1px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M13.5%202c-5.621%200-10.211%204.443-10.475%2010h-3.025l5%206.625%205-6.625h-2.975c.257-3.351%203.06-6%206.475-6%203.584%200%206.5%202.916%206.5%206.5s-2.916%206.5-6.5%206.5c-1.863%200-3.542-.793-4.728-2.053l-2.427%203.216c1.877%201.754%204.389%202.837%207.155%202.837%205.79%200%2010.5-4.71%2010.5-10.5s-4.71-10.5-10.5-10.5z%22%2F%3E%3C%2Fsvg%3E");
+  background-size: 23px;
+}
+#geo-api {
+  margin-bottom: 5px;
+}
