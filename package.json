@@ -8,7 +8,7 @@
     "clasp-deploy": "./clasp-deploy.sh",
     "test": "jest",
     "build": "webpack",
-    "prebuild": "./gcp-clean.sh && yarn roll-css",
+    "prebuild": "./gcp-clean.sh && yarn test && yarn roll-css",
     "roll-css": "./node_modules/nyc-lib/css/roll-css.sh ./src/css/geocoding-sheet.theme.css ./src/css/geocoding-sheet.css prd",
     "postbuild": "node pkg-addon",
     "postinstall": "chmod +x *.sh"
