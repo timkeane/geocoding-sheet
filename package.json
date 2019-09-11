@@ -1,10 +1,9 @@
 {
   "name": "geocoding-sheet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A geocoding addon for Google Sheets",
   "scripts": {
     "preclasp-push": "yarn build",
-    "preclasp-deploy": "yarn build && ./tag.sh",
     "clasp-push": "./clasp-push.sh",
     "clasp-deploy": "./clasp-deploy.sh",
     "test": "jest",
