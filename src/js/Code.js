@@ -29,7 +29,6 @@ function show(help) {
   SpreadsheetApp.getUi().showSidebar(html);
 }
 
-
 function getData() {
   return SpreadsheetApp.getActiveSheet().getDataRange().getValues();
 }
