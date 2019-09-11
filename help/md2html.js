@@ -23,11 +23,24 @@ html = `<!DOCTYPE html>
 <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
 <style>
 body {margin: 5px}
+img {cursor: pointer; width: calc(100% - 10px)}
 </style>
 </head>
 <body>
 <a id="index.md"></a>
 ${html.replace(/href\=\"\.\//g ,'href="#')}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$('img').click(function() {
+  var win = window.open();
+  win.document.write('<img src="' + this.src + '" alt="' + this.alt + '">');
+});
+$('img').each(function() {
+  this.alt = this.alt || '';
+  this.alt = this.alt + ' (click to enlarge)';
+  this.title = this.alt;
+});
+</script>
 </body>
 </html>`
 

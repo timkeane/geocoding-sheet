@@ -38,7 +38,7 @@ test('onInstall', () => {
   expect(menu.addItem).toHaveBeenCalledTimes(2)
   expect(menu.addItem.mock.calls[0][0]).toBe(ADDON_NAME)
   expect(menu.addItem.mock.calls[0][1]).toBe('show')
-  expect(menu.addItem.mock.calls[1][0]).toBe('Help')
+  expect(menu.addItem.mock.calls[1][0]).toBe('Quick start')
   expect(menu.addItem.mock.calls[1][1]).toBe('help')
 
   const item = menu.addItem.mock.results[0].value
@@ -59,7 +59,7 @@ test('help', () => {
 
   const page = templ.evaluate.mock.results[0].value
   expect(page.setTitle).toHaveBeenCalledTimes(1)
-  expect(page.setTitle.mock.calls[0][0]).toBe('Help')
+  expect(page.setTitle.mock.calls[0][0]).toBe('Quick start')
 
   expect(SpreadsheetApp.getUi).toHaveBeenCalledTimes(1)
 
@@ -288,14 +288,4 @@ test('setFields when gocodode does not provide a value', () => {
 
   expect(SpreadsheetApp.sheet.getRange.mock.calls[1]).toEqual([1, 8])
   expect(SpreadsheetApp.range.setValue.mock.calls[1]).toEqual([''])
-})
-
-test('include', () => {
-  expect.assertions(3)
-
-  const result = include('something')
-
-  expect(HtmlService.createHtmlOutputFromFile).toHaveBeenCalledTimes(1)
-  expect(HtmlService.createHtmlOutputFromFile.mock.calls[0][0]).toBe('something')
-  expect(result).toBe('mock-content')
 })

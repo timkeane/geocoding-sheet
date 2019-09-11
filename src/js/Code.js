@@ -15,7 +15,7 @@ function onInstall() {
 function onOpen() {
   const menu = SpreadsheetApp.getUi().createAddonMenu();
   menu.addItem(ADDON_NAME, 'show').addToUi();
-  menu.addItem('Help', 'help').addToUi();
+  menu.addItem('Quick start', 'help').addToUi();
 }
 
 function help() {
@@ -24,7 +24,7 @@ function help() {
 
 function show(help) {
   var page = help ? 'help' : 'index';
-  var title = help ? 'Help' : ADDON_NAME;
+  var title = help ? 'Quick start' : ADDON_NAME;
   var html = HtmlService.createTemplateFromFile(page).evaluate().setTitle(title);
   SpreadsheetApp.getUi().showSidebar(html);
 }
@@ -122,10 +122,6 @@ function geocoded(data) {
   };
 }
 
-function include(filename) {
-  return HtmlService.createHtmlOutputFromFile(filename).getContent();
-}
-
 /* for testing only - removed by build */
 global.ADDON_NAME = ADDON_NAME
 global.ERROR_COLOR = ERROR_COLOR
@@ -144,4 +140,3 @@ global.standardCols = standardCols
 global.geoCols = geoCols
 global.setFields = setFields
 global.geocoded = geocoded
-global.include = include
