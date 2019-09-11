@@ -289,3 +289,13 @@ test('setFields when gocodode does not provide a value', () => {
   expect(SpreadsheetApp.sheet.getRange.mock.calls[1]).toEqual([1, 8])
   expect(SpreadsheetApp.range.setValue.mock.calls[1]).toEqual([''])
 })
+
+test('include', () => {
+  expect.assertions(3)
+
+  const result = include('something')
+
+  expect(HtmlService.createHtmlOutputFromFile).toHaveBeenCalledTimes(1)
+  expect(HtmlService.createHtmlOutputFromFile.mock.calls[0][0]).toBe('something')
+  expect(result).toBe('mock-content')
+})

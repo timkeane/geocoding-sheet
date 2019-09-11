@@ -1,9 +1,13 @@
 const template = {}
 const page = {}
+const output = {}
 const HtmlService = {}
 
 const resetMocks = () => {
-  HtmlService.createTemplateFromFile = jest.fn().mockImplementation((fileName) => {
+  HtmlService.createHtmlOutputFromFile = jest.fn().mockImplementation(fileName => {
+    return output
+  })
+  HtmlService.createTemplateFromFile = jest.fn().mockImplementation(fileName => {
     return template
   })
   template.evaluate = jest.fn().mockImplementation(() => {
@@ -11,6 +15,9 @@ const resetMocks = () => {
   })
   page.setTitle = jest.fn().mockImplementation(() => {
     return page
+  })
+  output.getContent = jest.fn().mockImplementation(() => {
+    return 'mock-content'
   })
 }
 
